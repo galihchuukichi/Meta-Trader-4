@@ -1,0 +1,29 @@
+//+------------------------------------------------------------------+
+//|                                              Sec.3 Variables.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void OnStart()
+  {
+//---
+   double priceNow = 1.0555;
+   int maxLossInPips = 100;
+   bool boolIsTradingAllowed = 1;
+   string maxLossMessage = "Too much losses, shutting down system.";
+   
+   Alert("");
+   Alert(priceNow);
+   Alert(maxLossInPips);
+   Alert(boolIsTradingAllowed);
+   Alert(maxLossMessage);
+   
+   
+  }
+//+------------------------------------------------------------------+

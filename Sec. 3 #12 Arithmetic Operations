@@ -1,0 +1,41 @@
+//+------------------------------------------------------------------+
+//|                                        Arithmetics Operation.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void OnStart()
+  {
+//---
+   double testerAngka = 3.01;
+   int total = 5+testerAngka;
+   Alert(total+testerAngka);
+   
+   Alert("");
+   double accountSize = 10000.00;
+   double maxLosingPerTrade = 0.02;
+   Alert(accountSize*maxLosingPerTrade);
+   
+   Alert("");
+   double entryPrice = 1.75241;
+   double exitPrice  = 1.75741;
+   double pipsVal = 0.00001;
+   // hasil dibawah ini menghilangkan bagian belakang tanpa membulatkannya
+   int hasilSalah = (exitPrice-entryPrice) / pipsVal;
+   int hasilBenar = MathRound((exitPrice-entryPrice) / pipsVal);
+   Alert(hasilBenar);
+   
+   int bilangan1 = 50, bilangan2 = 3, hasilModulo = bilangan1%bilangan2;
+   Alert(hasilModulo);
+   
+   bilangan1++; bilangan1++;
+   bilangan2--;
+   
+  }
+//+------------------------------------------------------------------+

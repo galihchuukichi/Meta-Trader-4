@@ -12,6 +12,8 @@
 //+------------------------------------------------------------------+
 void OnStart()
   {
+// #17 Just a video to warn us about scammers
+
 //---
 /* TRIAL 1 SUCCESS
    double entryPrice = 1.77745;

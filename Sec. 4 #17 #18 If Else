@@ -1,0 +1,45 @@
+//+------------------------------------------------------------------+
+//|                                               Sec. 4 If else.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void OnStart()
+  {
+//---
+/* TRIAL 1 SUCCESS
+   double entryPrice = 1.77745;
+   int maxLossPoints = 20;
+   double stopLossPrice;
+   
+   bool bIsLongPosition = false;
+   if(bIsLongPosition){
+      stopLossPrice = entryPrice - maxLossPoints * 0.00001;
+   } else {
+      stopLossPrice = entryPrice + maxLossPoints * 0.00001;
+   }
+   
+   Alert("");
+   Alert("Stop Loss Price sent at: " + stopLossPrice);
+  */ 
+  
+  string dayNow = "Monday";
+  
+  if(dayNow == "Saturday" || dayNow == "Sunday"){
+   Alert("Now this is weekend. Take a rest plz!");
+  }else if (dayNow == "Friday"){
+   Alert("Today is " + dayNow + ". You should do something else :D");
+  }else {
+   Alert("Now is " + dayNow + ". Let's Trade!!!");
+  }
+   
+   
+   
+  }
+//+------------------------------------------------------------------+

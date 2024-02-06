@@ -1,0 +1,31 @@
+//+------------------------------------------------------------------+
+//|                               Sec.5 #20 Metatrader Functions.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void OnStart()
+  {
+//---
+   printAccountBalance();
+   // GO OVER THESE TO SEE LOTS of METATRADER'S FUNCTIONS 
+   // https://docs.mql4.com/ 
+  }
+//+------------------------------------------------------------------+
+
+
+
+void printAccountBalance(){
+   double accBalance = AccountBalance();
+   Alert("");
+   Alert("Your account balance is: $"+accBalance);
+   Alert("Your risk is: 2%");
+   Alert("Your risk in dollar is: " + accBalance*2/100);
+
+}

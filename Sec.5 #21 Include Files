@@ -1,0 +1,100 @@
+// Sec.5 #21 Include Files.mqh (THE LIBRARY)
+//+------------------------------------------------------------------+
+//|                                      Sec.5 #21 Include Files.mqh |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property strict
+//+------------------------------------------------------------------+
+//| defines                                                          |
+//+------------------------------------------------------------------+
+// #define MacrosHello   "Hello, world!"
+// #define MacrosYear    2010
+//+------------------------------------------------------------------+
+//| DLL imports                                                      |
+//+------------------------------------------------------------------+
+// #import "user32.dll"
+//   int      SendMessageA(int hWnd,int Msg,int wParam,int lParam);
+// #import "my_expert.dll"
+//   int      ExpertRecalculate(int wParam,int lParam);
+// #import
+//+------------------------------------------------------------------+
+//| EX5 imports                                                      |
+//+------------------------------------------------------------------+
+// #import "stdlib.ex5"
+//   string ErrorDescription(int error_code);
+// #import
+//+------------------------------------------------------------------+
+
+
+void printAccountBalance(){
+   double accBalance = AccountBalance();
+   Alert("");
+   Alert("Your account balance is: $"+accBalance);
+   Alert("Your risk is: 2%");
+   Alert("Your risk in dollar is: " + accBalance*2/100);
+
+}
+
+double getStopLossPrice(bool bIsLongPosition, double openPrice, int maxLossInPoints){
+   double stopLossPrice;
+   if(bIsLongPosition){ // LONG POSITION
+      stopLossPrice = openPrice - maxLossInPoints*0.00001;
+   
+   } else { // SHORT POSITION
+      stopLossPrice = openPrice + maxLossInPoints*0.00001;
+   
+   }
+   return stopLossPrice;
+
+
+}
+
+int addFunction(int a, int b){
+   return a+b;
+}
+
+void dayOfWeekAlert(){
+   Alert("");
+   int nowDay = DayOfWeek();
+   switch(nowDay){
+      case 0 : Alert("Today is Sunday. CHILL BRO!"); break;
+      case 1 : Alert("Today is Monday. Let's Trade!"); break;
+      case 2 : Alert("Today is Tuesday. Let's Trade!"); break;
+      case 3 : Alert("Today is Wednesday. Let's Trade!"); break;
+      case 4 : Alert("Today is Thursday. Let's Trade!"); break;
+      case 5 : Alert("Today is Friday. Let's Trade!"); break;
+      case 6 : Alert("Today is Saturday. Let's Trade!"); break;
+      default : Alert("ERROR! No such days");
+   }
+}
+
+
+// ################################################################### - BATAS FILE
+
+// Sec.5 #21 Include Files.mq4 (THE CODE)
+//+------------------------------------------------------------------+
+//|                                      Sec.5 #21 Include Files.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+#include <Sec.5 #21 Include Files.mqh>
+
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void OnStart()
+  {
+//---
+// LOOK AT INCLUDE FOLDERS! AND LOOK UP AT Sec.5 #21 Include Files
+dayOfWeekAlert();
+printAccountBalance();
+  }
+//+------------------------------------------------------------------+
+

@@ -270,3 +270,36 @@ void OnStart()
   }
 //+------------------------------------------------------------------+
 
+
+//+------------------------------------------------------------------+
+//|                                                      #34 RSI.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+
+int rsiPeriod = 20;
+void OnStart()
+  {
+//---
+   // double rsiValue = iRSI(NULL,PERIOD_CURRENT,rsiPeriod,PRICE_CLOSE,0);
+   double rsiCurrentValue  = iRSI(NULL,PERIOD_CURRENT,rsiPeriod,PRICE_CLOSE,0);
+   double rsiPreviousValue = iRSI(NULL,PERIOD_CURRENT,rsiPeriod,PRICE_CLOSE,1);
+   
+   if(rsiCurrentValue > 30 && rsiPreviousValue < 30){
+      Alert("BUY now");
+   }
+   
+   
+   
+  }
+//+------------------------------------------------------------------+
+
+
+

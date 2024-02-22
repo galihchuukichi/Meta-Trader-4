@@ -418,4 +418,50 @@ void OnStart()
   }
 //+------------------------------------------------------------------+
 
+//+------------------------------------------------------------------+
+//|                             #37 38 Pre Orders Sending Checks.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+#include <Sec.All Amazing Function.mqh>
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void OnStart()
+  {
+//---
+//--- #37 Just recall to social media
+
+   Alert("");
+   //Alert(IsTradeAllowed()); // Function 1
+   //Alert(IsTradeAllowed(NULL,TimeCurrent())); // Function 2
+   
+   if(isTradingAllowed()){
+      Alert("Doing some trades");
+   }
+
+   
+  }
+//+------------------------------------------------------------------+
+
+/*
+bool isTradingAllowed(){
+   
+   if(!IsTradeAllowed()){
+      Alert("Trading isn't allowed. CHECK the AUTOTRADE!");
+      return 0;
+   }
+   
+   if(!IsTradeAllowed(Symbol(),TimeCurrent())){
+      Alert("Trading is not available at the current symbol and specific time.");
+      return 0;
+   }   
+   return 1;
+}
+
+*/
 

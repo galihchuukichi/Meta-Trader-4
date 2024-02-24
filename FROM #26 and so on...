@@ -486,3 +486,38 @@ void OnStart()
         
   }
 //+------------------------------------------------------------------+
+
+
+//+------------------------------------------------------------------+
+//|                                           #40 Sending Orders.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+#include <Sec.All Amazing Function.mqh>
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void OnStart()
+  {
+//---
+   Alert("");
+   int OrderID=0;
+   double minimumLot = MarketInfo(NULL,MODE_MINLOT);
+   Alert("min. Lot: "+MarketInfo(NULL,MODE_MINLOT));
+   
+   if(isTradingAllowed()){
+      OrderID = OrderSend(NULL,OP_BUYLIMIT,minimumLot,2026.30,10,2024.30,2028.30);
+   }
+   // SLIPPAGE based on points
+   Alert("Order ID: "+OrderID);
+   if(OrderID < 0){
+      Alert("YOUR TRADE IS FAILED");
+   }
+   
+  }
+//+------------------------------------------------------------------+
+

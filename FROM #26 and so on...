@@ -697,5 +697,24 @@ void OnStart()
   }
 //+------------------------------------------------------------------+
 
+//+------------------------------------------------------------------+
+//|                                  #44 Position Sizing Methods.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void OnStart()
+  {
+//---
+// THE VIDEO JUST SHOWED HOW COMPLEX THE LOT CALCULATIONS
+   
+  }
+//+------------------------------------------------------------------+
 
 

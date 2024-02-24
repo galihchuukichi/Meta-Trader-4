@@ -592,3 +592,46 @@ void checkTradeSuccess(int myOrderID){
       Alert("TRADE SUCCESS :)");
    }
 }
+
+//+------------------------------------------------------------------+
+//|                                          #42 Error Handlings.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void OnStart()
+  {
+//---
+   Alert("");
+   Alert(MarketInfo(NULL,MODE_STOPLEVEL));
+   Alert("Min. Lot req. : " + MarketInfo(NULL,MODE_MINLOT));
+   Alert("Max. Lot req. : " + MarketInfo(NULL,MODE_MAXLOT));
+   int orderID = OrderSend(NULL,OP_BUY,0.1,Ask,10,2500,2300);
+   
+   if(orderID < 0){
+      Alert("Order FAILED bcs: "+GetLastError());
+   } else {
+      Alert("order sent :)");
+   }
+//+------------------------------------------------------------------+
+
+
+
+// NOTE PENTING
+// SLIPPAGE BERPENGARUH PADA MODE_STOPLEVEL, SO BE CAREFULL!!!
+
+// ANOTHER NOTE PENTING
+// MINLOT: 23
+// IDK WHY but maybe pengaruh ke min. 200 points trus ada slippage? 
+// atau minlot nya dalam 0.023
+// 23 in minlot MEANS CODE FOR COMPUTER TO KNOW THAT 23 = MINLOT
+// WARNING WHEN Alert("minlot: "+MODE_MINLOT);
+
+
+}

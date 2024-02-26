@@ -777,7 +777,7 @@ double myOptimalLotSizeCalculation(double maxRiskPercentage, double entryPrice, 
 }
 
 //+------------------------------------------------------------------+
-//|                                              #46 Assignments.mq4 |
+//|                                              #46 & 47 Assignments & Answer.mq4 |
 //|                                  Copyright 2024, MetaQuotes Ltd. |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
@@ -845,5 +845,43 @@ void OnStart()
   }
 //+------------------------------------------------------------------+
 
+//+------------------------------------------------------------------+
+//|                                                 #48 Early EA.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+  {
+//---
+   
+   Alert("THE EA starts !!!");
+//---
+   return(INIT_SUCCEEDED);
+  }
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+  {
+//---
+   Alert("EA HAS STOPPED");
+   
+  }
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+  {
+//---
+   Alert("Pride is updated to: "+Ask);
+  }
+//+------------------------------------------------------------------+
 
 

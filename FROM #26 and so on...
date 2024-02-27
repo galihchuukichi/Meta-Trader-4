@@ -971,3 +971,46 @@ void OnTick()
 //+------------------------------------------------------------------+
 
 
+//+------------------------------------------------------------------+
+//|                           #50 Total Orders and Magic Numbers.mq4 |
+//|                                  Copyright 2024, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2024, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#property strict
+#include <Sec.All Amazing Function.mqh>
+
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+
+int magicNumber = 1234;
+void OnStart()
+  {
+//---
+   Alert("");
+   if(checkIfOpenOrdersByMagicNumbers(magicNumber)){
+      Alert("THE EA ("+magicNumber+") : Has already sent order");
+   } else {
+      int myOrderID = OrderSend(NULL,OP_BUY,0.1,Ask,10,Ask-3.0,Ask+3.0,NULL,magicNumber);
+      if(myOrderID < 0)
+         Alert("ERROR: "+GetLastError());
+      else
+         Alert("ORDER SENT");
+   }
+   int myOpenOrder = OrdersTotal();
+   Alert("myOpenOrder: "+myOpenOrder);
+   
+   
+   /*
+   if(myOpenOrder < 1){
+      Alert("SEND ORDER");
+   } else {
+      Alert("Alredy have position. Don't take another position.");
+   }
+   */
+  }
+//+------------------------------------------------------------------+
+
